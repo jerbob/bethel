@@ -1,0 +1,11 @@
+[package]
+name = "bethel"
+version = "0.1.0"
+authors = ["Jeremiah Boby <mail@jeremiahboby.me>"]
+edition = "2018"
+
+[dependencies]
+actix-rt = "1.0"
+actix-web = "2.0"
+rusqlite = "0.21.0"
+actix-files = "0.2.1"

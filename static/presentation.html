@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bethel</title>
+        <link rel="stylesheet" href="static/css/bulma.css">
+        <script defer src="static/js/fontawesome.js"></script>
+        <link href="static/css/font.css" rel="stylesheet">
+        <script src="static/js/vue.js"></script>
+        <link rel="stylesheet" href="static/css/presentation.css">
+    </head>
+
+    <body>
+        <section id="app" class="section">
+            <div class="tile box" id="presentation-preview">
+                <p class="presentation-text" v-for="(text, index) in presentable" v-bind:class="{'first-verse': index == 0}">[[ text ]]</p>
+            </div>
+        </section>
+    </body>
+
+    <script src="static/js/socket.js"></script>
+    <script src="static/js/presentation.js"></script>
+</html>

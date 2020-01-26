@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bethel</title>
+        <link rel="stylesheet" href="static/css/bulma.css">
+        <link rel="stylesheet" href="static/css/index.css">
+        <script defer src="static/js/fontawesome.js"></script>
+        <link href="static/css/font.css" rel="stylesheet">
+        <script src="static/js/vue.js"></script>
+    </head>
+
+    <body>
+    <section id="app" class="section">
+        <div class="columns">
+            <div class="column is-three-fifths">
+                <div class="dropdown is-active">
+                    <div class="dropdown-trigger">
+                        <p id="search-container" class="control has-icons-left">
+                            <input spellcheck="false" class="input" id="search" type="text" placeholder="Search">
+                            <span class="icon is-left"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        </p>
+                    </div>
+                    <div class="dropdown-menu is-hidden" id="dropdown-menu" role="menu">
+                        <div id="dropdown" class="dropdown-content">
+                            <a class="dropdown-item" v-for="result in results" v-on:mousedown="dropdownClick">[[ result.text ]]</a>
+                        </div>
+                    </div>
+                <button id="hide-button" class="button" v-on:click="hideClick" v-bind:class="{'inverted': hidden}">
+                    <template v-if="!hidden"><span class="icon"><i class="fas fa-eye"></i></span></template>
+                    <template v-if="hidden"><span class="icon"><i class="fas fa-eye-slash"></i></span></template>
+                </button>
+                </div>
+                <div class="tile box" id="presentation-preview">
+                    <p class="presentation-text" v-for="(text, index) in presentable" v-bind:class="{'first-verse': index == 0}">[[ text ]]</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <nav class="panel">
+                    <p class="panel-tabs">
+                        <a v-bind:class="{'is-active': panel == 'Recent'}" v-on:click="app.panel = 'Recent'">Recent</a>
+                        <a v-bind:class="{'is-active': panel == 'Schedule'}" v-on:click="app.panel = 'Schedule'">Schedule</a>
+                    </p>
+                    <a class="panel-block" v-if="panel == 'Recent'" v-for="recent in recents" v-on:click="recentClick">
+                        <span class="panel-icon"><i class="fas" v-bind:class="recent.icon" aria-hidden="true"></i></span>
+                        [[ recent.text ]]
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="tabs is-centered">
+            <ul>
+                <li v-bind:class="{'is-active': mode == 'Verses'}" v-on:click="app.mode = 'Verses'"><a>Verses</a></li>
+                <li v-bind:class="{'is-active': mode == 'Lyrics'}" v-on:click="app.mode = 'Lyrics'"><a>Lyrics</a></li>
+                <li v-bind:class="{'is-active': mode == 'Search'}" v-on:click="app.mode = 'Search'"><a>Search</a></li>
+            </ul>
+        </div>
+
+        <nav class="panel">
+            <a class="panel-block verse" v-if="mode == 'Verses'" v-for="verse in verses" v-on:click="verseClick">
+                <div class="columns">
+                    <div class="column"><strong>[[ verse.number ]]</strong> [[ verse.english ]]</div>
+                    <div class="column"><strong>[[ verse.number ]]</strong> [[ verse.malayalam ]]</div>
+                </div>
+            </a>
+        </nav>
+    </section>
+    <script src="static/js/socket.js"></script>
+    <script src="static/js/transliteration.js"></script>
+    <script src="static/js/index.js"></script>
+    </body>
+
+</html>

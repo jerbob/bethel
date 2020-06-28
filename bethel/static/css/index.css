@@ -106,7 +106,7 @@ html * {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
@@ -123,4 +123,8 @@ html * {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.tabs {
+  margin-top: 1.4rem;
 }

@@ -21,14 +21,13 @@ root = 'http://www.kristheeyagaanavali.com/mal/Songbook/Athmeeya_Geethangal'
 
 def get_verses(link: str) -> str:
     """Get song verses, given an absolute URL."""
-    verse = []
-    verses = []
+    verse, verses = [], []
     for line in session.get(link).html.find('p'):
         if 'copyright' not in line.attrs.get('class', ''):
             if line.text.strip():
                 verse.append(line.text)
             else:
-                verses.append(verse)
+                verses.append(verse.copy())
                 verse.clear()
     verses.append(verse)
     return '\n'.join(map('\t'.join, verses))
@@ -60,4 +59,3 @@ def load() -> None:
                     'INSERT INTO songs VALUES (?, ?)', (verses, key)
                 )
     print(f'[?] songs.db populated with {total} songs.')
-    connection.close()

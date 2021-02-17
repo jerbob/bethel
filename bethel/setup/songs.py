@@ -7,13 +7,14 @@ import sys
 from pathlib import Path
 
 from lxml import etree
-from ml2en.ml2en import ml2en
 from requests_html import HTMLSession
 
-converter = ml2en()
+from .mlphone import MLphone
+
+converter = MLphone()
 session = HTMLSession()
 
-root = "http://www.kristheeyagaanavali.com/mal/Songbook/Athmeeya_Geethangal"
+root = "https://www.kristheeyagaanavali.com/mal/Songbook/Athmeeya_Geethangal"
 
 
 def get_verses(link: str) -> str:

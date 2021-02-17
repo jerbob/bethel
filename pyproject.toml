@@ -12,7 +12,6 @@ Flask-SocketIO = "^5.0.1"
 requests-html = "^0.10.0"
 gevent = "^21.1.2"
 gevent-websocket = "^0.10.1"
-ml2en = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"

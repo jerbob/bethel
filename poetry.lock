@@ -367,14 +367,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "ml2en"
-version = "1.0.0"
-description = "A transliteration algorithm to transliterate Malayalam unicode strings to 'Manglish'"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "mypy"
 version = "0.800"
 description = "Optional static typing for Python"
@@ -748,7 +740,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a31264266b6b590192cd6bd79d6a442d8764f54cc66cbb19fea62a07c13154ab"
+content-hash = "30ba3160cd1d113ccfa41e3df79ed5cc99647e1a6072e598933483e9caf7cff5"
 
 [metadata.files]
 appdirs = [
@@ -1040,9 +1032,6 @@ markupsafe = [
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
-]
-ml2en = [
-    {file = "ml2en-1.0.0.tar.gz", hash = "sha256:fe492193bdc72ef71b003bd38d220baa7dab226e1b0da3fddba46a74bf48bf8b"},
 ]
 mypy = [
     {file = "mypy-0.800-cp35-cp35m-macosx_10_9_x86_64.whl", hash = "sha256:e1c84c65ff6d69fb42958ece5b1255394714e0aac4df5ffe151bc4fe19c7600a"},

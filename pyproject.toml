@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "bethel"
+version = "0.1.0"
+description = "A web interface for viewing and presenting bilingual content."
+authors = ["Jeremiah Boby <mail@jeremiahboby.me>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^1.1.2"
+Flask-SocketIO = "^5.0.1"
+requests-html = "^0.10.0"
+gevent = "^21.1.2"
+gevent-websocket = "^0.10.1"
+ml2en = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+mypy = "^0.800"
+ipython = "^7.20.0"
+black = "^20.8b1"
+isort = "^5.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
